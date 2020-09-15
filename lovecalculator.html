@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>LOVE CALCULATOR</title>
+   <link rel = "icon" href =  
+"iconInTitle.jpg" 
+        type = "image/x-icon"> 
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+ 
+</head>
+<body style="background-image: url(backgroundImage.jpg); background-repeat: no-repeat; background-size: cover; background-attachment: fixed; color: white; ">
+
+<div class="container" style="padding-top: 75px">
+  <h1 >LOVE CALCULATOR</h1>
+  <p><i>Know your LOVE on your crush</i></p>
+  <br>
+  
+  <form class="form-inline" >
+    <label for="YourName" class="mb-2 mr-sm-2">Your Name:</label>
+    <input type="text" class="form-control mb-2 mr-sm-2" id="YourName" placeholder="Enter Name" name="YourName"  required>
+	<label for="CrushName" class="mb-2 mr-sm-2">Crush Name:</label>
+	<input type="text" class="form-control mb-2 mr-sm-2" id="CrushName" placeholder="Enter Name" name="CrushName"  required>
+	<input list="gender" name="gender" id="gender1" placeholder="Enter Crush's Gender" class="form-control mb-2 mr-sm-2"> <datalist id="gender"> <option value="MALE"><option value="FEMALE"></datalist>
+
+	
+  </form>
+  <br>
+  <button type="submit" class="btn btn-primary mb-2" onclick="calculate(this)">CALCULATE</button>
+</div>
+
+<script>
+	function calculate(THIS)
+	{
+		
+		if(document.querySelector("#YourName").value && document.querySelector("#CrushName").value && document.querySelector("#gender1").value)
+		{	
+
+			THIS.style.display = "none";
+
+
+			var love = Math.floor(Math.random()*51)+50
+			if(document.querySelector("#gender1").value == "MALE")
+			{
+				var word1 = "his"
+				var word2 = "him"
+				var word3 = "He"
+			}
+			else
+			{
+				var word1 = "her"
+				var word2 = "her"
+				var word3 = "She"
+			}
+
+
+
+
+			var html = "<br>Dear "+ document.querySelector("#YourName").value.toUpperCase() + ", the &#128151 LOVE &#128151 between you and "+document.querySelector("#CrushName").value + " is " + love + "%<br><br>"
+			if(love==100)
+			{
+				
+				var paragraph = "You are the SUNSHINE that make "+word1+" day. Your LOVE &#128151 and SOUL belong only to "+word2
+				+ ". Your World revolves around "+word2 + ". "+word3+" is the FIRST and LAST thing in your mind each and every day"+"You can't imagine life without "+word2+". " + "No matter what people say, you keep LOVING "+word2+" until your heart beats no more. "
+			}
+			else if(love>=50 && love<=70)
+			{
+				var paragraph = word3 + " is a treasure to you. "+ "Your LOVE for "+word2+" keeps increasing every second. Your DAY is incomplete without a thought of "+word2+". Missing "+word2+" is your hobby. Caring for "+word2+" is your job. Making "+word2+" happy is your duty. Loving "+word2+" is your LIFE."
+			}
+			else
+			{
+				var paragraph = "Your SIX word LOVE story is you can't imagine your life without "+word2+". You always love and care for "+word2+ " even you are far from each other. The one thing that make you happy is "+word1+" smile. "+word3+" is the incredible way of making your heart &#128151 HAPPY."
+
+			}
+			html+= paragraph+"<br><br> TAKE THIS AS A SCREENSHOT AND SEND THAT TO YOUR CRUSH AND IMPRESS "+word2.toUpperCase()+"."
+		}
+		else
+		{
+			var html = "Please fill all the details in the form &#128533"
+		}
+		if(document.querySelector(".container").lastChild.tagName!="P")
+		{
+			var k = document.querySelector(".container")
+			var y = document.createElement("p")
+			y.innerHTML = html
+			k.appendChild(y)
+		}
+		else
+		{
+			var k = document.querySelector(".container").lastChild
+			k.innerHTML = html
+
+		}
+		
+
+
+	}
+</script>
+<!-- AddToAny BEGIN -->
+<div class="a2a_kit a2a_kit_size_32 a2a_default_style">
+<ul style="list-style-type: none">
+<li><a class="a2a_button_facebook"></a></li>
+<li><a class="a2a_button_twitter"></a></li>
+<li><a class="a2a_button_whatsapp"></a></li>
+</ul>
+</div>
+<script async src="https://static.addtoany.com/menu/page.js"></script>
+<!-- AddToAny END -->
+
+</body>
+
+</html>
